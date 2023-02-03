@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import com.samuelvialle.snippets.a1_layout_xml.A11_LinearLayoutXml;
 import com.samuelvialle.snippets.a1_layout_xml.A12_FrameLayoutXml;
+import com.samuelvialle.snippets.a1_layout_xml.A16_GridLayoutXml;
 import com.samuelvialle.snippets.a4_media.A41_Audio_Auto;
+import com.samuelvialle.snippets.a4_media.A42_Video;
 
 public class A0_AccueilActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class A0_AccueilActivity extends AppCompatActivity {
     TextView tvLinearLayout, tvFrameLayout, tvRelativeLatyout;
 
     // L'audio
-    TextView tvAudio;
+    TextView tvAudio, tvVideo;
 
     /** Méthode pour l'initialiastion des composants graphiques **/
     private void initUI(){
@@ -28,6 +30,7 @@ public class A0_AccueilActivity extends AppCompatActivity {
         tvRelativeLatyout = findViewById(R.id.tvRelativeLayout);
         // Audio
         tvAudio = findViewById(R.id.tvAudio);
+        tvVideo = findViewById(R.id.tvVideo);
     }
 
     // Les layouts XML
@@ -35,7 +38,7 @@ public class A0_AccueilActivity extends AppCompatActivity {
         tvLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(A0_AccueilActivity.this, A11_LinearLayoutXml.class);
+                Intent intent = new Intent(A0_AccueilActivity.this, A16_GridLayoutXml.class);
                 startActivity(intent);
             }
         });
@@ -62,6 +65,15 @@ public class A0_AccueilActivity extends AppCompatActivity {
         });
     }
 
+    private void clicVideo(){
+        tvVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(A0_AccueilActivity.this, A42_Video.class));
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +85,7 @@ public class A0_AccueilActivity extends AppCompatActivity {
         clicFrame();
         // L'audio
         clicAudio();
+        clicVideo();
 
     }
 

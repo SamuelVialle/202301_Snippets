@@ -99,9 +99,21 @@
         android:background="@drawable/a0_shape_accueil_a4_medias"
         android:text="AUDIO"
         android:theme="@style/TexteAccueil"
+        app:layout_constraintEnd_toStartOf="@id/tvVideo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv___Media" />
+
+    <TextView
+        android:id="@+id/tvVideo"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/a0_shape_accueil_a4_medias"
+        android:text="VIDEO"
+        android:theme="@style/TexteAccueil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvAudio"
+        app:layout_constraintTop_toTopOf="@id/tvAudio"
+        app:layout_constraintBottom_toBottomOf="@id/tvAudio"/>
 
     <!--    LISTES -->
     <TextView

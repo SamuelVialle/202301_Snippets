@@ -13,7 +13,21 @@
         android:theme="@style/Theme.Snippets"
         tools:targetApi="31">
         <activity
+            android:name=".a1_layout_xml.A16_GridLayoutXml"
+            android:exported="false" />
+        <activity
+            android:name=".a4_media.A42_Video"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
+        <activity
             android:name=".a4_media.A41_Audio_Auto"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".a3_media.A31_Splash_Animation"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -48,6 +62,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

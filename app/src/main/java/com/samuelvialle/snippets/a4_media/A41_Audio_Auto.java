@@ -11,6 +11,9 @@ import android.widget.SeekBar;
 
 import com.samuelvialle.snippets.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class A41_Audio_Auto extends AppCompatActivity {
 
     /** 1 Lancement automatique du morceau de musique au chargement de la page, parfait pour un
@@ -44,6 +47,38 @@ public class A41_Audio_Auto extends AppCompatActivity {
         mediaPlayer.pause();
     }
 
+    // Méthode pour la gestion de la position
+    private void position(){
+        SeekBar sbPosition = findViewById(R.id.sbPosition); // Lien entre le design et le java
+        sbPosition.setMax(mediaPlayer.getDuration());
+
+        sbPosition.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                myPause(sbPosition);
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                myPlay(sbPosition);
+                mediaPlayer.seekTo(sbPosition.getProgress());
+            }
+        });
+
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                // ce que l'on veut faire
+                sbPosition.setProgress(mediaPlayer.getCurrentPosition());
+            }
+        }, 0, 300);
+    }
+
     /**
      * MÉTHODES DU CYCLE DE VIE
      **/
@@ -54,6 +89,8 @@ public class A41_Audio_Auto extends AppCompatActivity {
 
         // 2.2 Valorisation du MediaPlayer
         mediaPlayer = MediaPlayer.create(this, R.raw.mp_audio_uptown_funk);
+
+        position();
 
         // == Volume
         SeekBar sbVolume = findViewById(R.id.sbVolume);
