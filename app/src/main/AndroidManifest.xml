@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Snippets"
         tools:targetApi="31">
         <activity
+            android:name=".A51_ListView"
+            android:exported="false" />
+        <activity
             android:name=".a1_layout_xml.A16_GridLayoutXml"
             android:exported="false" />
         <activity

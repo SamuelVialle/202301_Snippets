@@ -116,6 +116,7 @@
         app:layout_constraintBottom_toBottomOf="@id/tvAudio"/>
 
     <!--    LISTES -->
+
     <TextView
         android:id="@+id/tv___Listes"
         android:layout_width="0dp"
@@ -126,4 +127,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAudio" />
+
+    <TextView
+        android:id="@+id/tvList"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/a0_shape_accueil_a5_liste"
+        android:text="LISTES"
+        android:theme="@style/TexteAccueil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv___Listes" />
 </androidx.constraintlayout.widget.ConstraintLayout>
