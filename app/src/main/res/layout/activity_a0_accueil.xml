@@ -135,8 +135,21 @@
         android:background="@drawable/a0_shape_accueil_a5_liste"
         android:text="LISTES"
         android:theme="@style/TexteAccueil"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvSpinner"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv___Listes" />
+
+    <TextView
+        android:id="@+id/tvSpinner"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/a0_shape_accueil_a5_liste"
+        android:text="Spinner"
+        android:theme="@style/TexteAccueil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvList"
+        app:layout_constraintTop_toTopOf="@id/tvList"
+        app:layout_constraintBottom_toBottomOf="@id/tvList"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,8 @@ import com.samuelvialle.snippets.a1_layout_xml.A12_FrameLayoutXml;
 import com.samuelvialle.snippets.a1_layout_xml.A16_GridLayoutXml;
 import com.samuelvialle.snippets.a4_media.A41_Audio_Auto;
 import com.samuelvialle.snippets.a4_media.A42_Video;
+import com.samuelvialle.snippets.a5_list.A51_ListView;
+import com.samuelvialle.snippets.a5_list.A52_Spinner;
 
 public class A0_AccueilActivity extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class A0_AccueilActivity extends AppCompatActivity {
     TextView tvAudio, tvVideo;
 
     // Les listes
-    TextView tvList;
+    TextView tvList, tvSpinner;
 
     /** Méthode pour l'initialiastion des composants graphiques **/
     private void initUI(){
@@ -35,6 +37,7 @@ public class A0_AccueilActivity extends AppCompatActivity {
         tvVideo = findViewById(R.id.tvVideo);
         // Les listes
         tvList = findViewById(R.id.tvList);
+        tvSpinner = findViewById(R.id.tvSpinner);
     }
 
     // Les layouts XML
@@ -87,6 +90,15 @@ public class A0_AccueilActivity extends AppCompatActivity {
         });
     }
 
+    private void clicSpinner(){
+        tvSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(A0_AccueilActivity.this, A52_Spinner.class));
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +113,7 @@ public class A0_AccueilActivity extends AppCompatActivity {
         clicVideo();
         // Les listes
         clicListView();
+        clicSpinner();
 
     }
 

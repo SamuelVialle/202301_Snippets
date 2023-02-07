@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Snippets</string>
+    <string name="app_name" translatable="false">Snippets</string>
+
+    <string name="btnValider">OK</string>
+
+    <string-array name="stagiaires">
+        <item>Imothepu</item>
+        <item>Inan</item>
+        <item>Pierre 1</item>
+        <item>Tri</item>
+        <item>Jason</item>
+        <item>Mathias</item>
+        <item>Nicolas</item>
+        <item>Yacouba</item>
+        <item>Pierre 2</item>
+        <item>Michel</item>
+    </string-array>
 </resources>
